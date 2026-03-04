@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "bat13adf"
+		},
+		"ADLS_LINKED_SERVICE_accountKey": {
+			"value": ""
+		},
+		"Blob_Linked_Service_connectionString": {
+			"value": ""
+		},
+		"SQLDB_LINKED_SERVICE_password": {
+			"value": ""
+		},
+		"sql_db_parameterization_password": {
+			"value": ""
+		},
+		"ADLS_LINKED_SERVICE_properties_typeProperties_url": {
+			"value": "https://bat12adls.dfs.core.windows.net/"
+		},
+		"SQLDB_LINKED_SERVICE_properties_typeProperties_server": {
+			"value": "mission100server.database.windows.net"
+		},
+		"SQLDB_LINKED_SERVICE_properties_typeProperties_database": {
+			"value": "batch12db"
+		},
+		"SQLDB_LINKED_SERVICE_properties_typeProperties_userName": {
+			"value": "azure"
+		},
+		"sql_db_parameterization_properties_typeProperties_server": {
+			"value": "mission100server.database.windows.net"
+		},
+		"sql_db_parameterization_properties_typeProperties_database": {
+			"value": "batch12db"
+		},
+		"sql_db_parameterization_properties_typeProperties_userName": {
+			"value": "@{linkedService().userName}"
+		}
+	}
+}
