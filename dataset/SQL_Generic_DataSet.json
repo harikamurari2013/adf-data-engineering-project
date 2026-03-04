@@ -1,0 +1,31 @@
+{
+	"name": "SQL_Generic_DataSet",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "SQLDB_LINKED_SERVICE",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"schemaNameParam": {
+				"type": "string"
+			},
+			"tableNameParam": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": {
+				"value": "@dataset().schemaNameParam",
+				"type": "Expression"
+			},
+			"table": {
+				"value": "@dataset().tableNameParam",
+				"type": "Expression"
+			}
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

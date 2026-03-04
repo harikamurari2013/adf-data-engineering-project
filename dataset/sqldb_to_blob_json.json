@@ -1,0 +1,19 @@
+{
+	"name": "sqldb_to_blob_json",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Blob_Linked_Service",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Json",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "landing"
+			}
+		},
+		"schema": {}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

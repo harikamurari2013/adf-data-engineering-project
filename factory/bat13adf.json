@@ -1,0 +1,9 @@
+{
+	"name": "bat13adf",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "53afaffa-f5ae-4b74-9e95-2103cbfff803",
+		"tenantId": "0f390327-9ec9-4ece-b3d7-c92418a0a51f"
+	}
+}
