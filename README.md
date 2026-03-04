@@ -27,7 +27,8 @@ The project demonstrates:
 
 # Architecture
 
-![ADF Architecture](architecture.png)
+<img width="2685" height="549" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/32062e45-de4e-4e13-a3af-92772b33f999" />
+
 
 ---
 
