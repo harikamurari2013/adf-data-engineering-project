@@ -5,34 +5,43 @@
 ![SQL](https://img.shields.io/badge/SQL-AzureSQL-green)
 ![GitHub](https://img.shields.io/badge/VersionControl-GitHub-black)
 
-This project demonstrates an **end-to-end Azure Data Engineering pipeline** built using **Azure Data Factory** to ingest relational data from **Azure SQL Database** into **Azure Data Lake Storage Gen2**.
+This project demonstrates an **end-to-end Azure Data Engineering pipeline** using **Azure Data Factory (ADF)** to ingest relational data from **Azure SQL Database** into **Azure Data Lake Storage Gen2 (ADLS)**.
 
-The project implements common enterprise **data ingestion and orchestration patterns** used in modern data platforms.
+The goal of this project is to showcase common **data ingestion and orchestration patterns used in real-world data engineering pipelines.**
 
 ---
 
-# Project Architecture
+# Project Overview
 
-<img width="2685" height="549" alt="mermaid-diagram" src="https://github.com/user-attachments/assets/397d6fde-d683-4d34-b282-043a30b31727" />
+The pipelines extract data from **Azure SQL Database (AdventureWorks SalesLT tables)** and load it into **Azure Data Lake Storage Gen2** in multiple file formats.
 
+The project demonstrates:
+
+* Full database migration pipelines
+* Incremental data ingestion
+* SQL joins during ingestion
+* Pipeline orchestration using ADF control flow activities
+* Data storage in multiple formats
+
+---
+
+# Architecture
+
+![ADF Architecture](architecture.png)
 
 ---
 
 # Data Flow
 
-1. Source data resides in **Azure SQL Database (AdventureWorks SalesLT tables)**
+1. Source data is stored in **Azure SQL Database (SalesLT tables)**.
 
-2. **Azure Data Factory pipelines** orchestrate the ingestion process using:
+2. **Azure Data Factory pipelines** orchestrate the ingestion process.
 
-* Copy Activity
-* Lookup Activity
-* ForEach Activity
-* If Condition
-* Execute Pipeline
+3. ADF uses **Copy Activity and SQL queries** to extract data.
 
-3. Data is ingested into **Azure Data Lake Storage Gen2 landing zone**
+4. Data is written to **Azure Data Lake Storage Gen2 Landing Zone**.
 
-4. Data is stored in multiple formats:
+5. Data is stored in different formats:
 
 * CSV
 * JSON
@@ -45,7 +54,7 @@ The project implements common enterprise **data ingestion and orchestration patt
 | Technology                   | Purpose                |
 | ---------------------------- | ---------------------- |
 | Azure Data Factory           | Pipeline orchestration |
-| Azure SQL Database           | Source system          |
+| Azure SQL Database           | Source data system     |
 | Azure Data Lake Storage Gen2 | Data Lake storage      |
 | GitHub                       | Version control        |
 
@@ -63,7 +72,7 @@ Implements **incremental loading** using watermark logic.
 
 ### Ingest_Product_Data
 
-Copies **SalesLT.Product** table data to ADLS.
+Copies **SalesLT.Product** table data into ADLS.
 
 ### Ingest_Product_Description
 
@@ -71,7 +80,7 @@ Loads product description data.
 
 ### Ingest_Customer_Data
 
-Copies **SalesLT.Customer** data to ADLS.
+Copies **SalesLT.Customer** data into ADLS.
 
 ### Ingest_Address
 
@@ -79,11 +88,13 @@ Loads **SalesLT.Address** table data.
 
 ### Ingest_Cust_Address_Data
 
-Performs **Customer + Address join** and stores output in ADLS.
+Performs **Customer + Address join** and stores the result in ADLS.
 
 ---
 
-# Control Flow Activities Demonstrated
+# Control Flow Activities Used
+
+This project demonstrates several Azure Data Factory orchestration activities:
 
 * Lookup Activity
 * ForEach Activity
@@ -91,7 +102,20 @@ Performs **Customer + Address join** and stores output in ADLS.
 * Execute Pipeline
 * Get Metadata Activity
 
-These activities allow building **dynamic and metadata-driven pipelines**.
+These activities help build **dynamic and metadata-driven pipelines**.
+
+---
+
+# Skills Demonstrated
+
+* Azure Data Factory
+* Data Pipeline Design
+* Azure SQL Database
+* Azure Data Lake Storage Gen2
+* ETL / ELT pipeline development
+* Incremental Data Loading
+* Pipeline orchestration
+* Git version control
 
 ---
 
@@ -110,14 +134,12 @@ adf-data-engineering-project
 
 ---
 
-# Key Data Engineering Concepts Demonstrated
+# Future Improvements
 
-* ETL / ELT pipeline design
-* Data ingestion into Data Lake
-* SQL joins during ingestion
-* Incremental loading patterns
-* Pipeline orchestration
-* Git version control for ADF
+* Implement Bronze / Silver / Gold data lake layers
+* Add transformations using Azure Databricks
+* Implement CI/CD pipelines using Azure DevOps
+* Add data validation and monitoring
 
 ---
 
